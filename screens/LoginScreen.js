@@ -4,8 +4,8 @@ import db from '../Config';
 import firebase from 'firebase';
  
 /*#212F3C -> navy-ish blue
-#2ECC71 -> green
-#D5DBDB -> darker than white but whitish*/
+  #2ECC71 -> green
+  #D5DBDB -> darker than white but whitish*/
 
 export default class LoginScreen extends Component{
   constructor(){
