@@ -5,7 +5,7 @@ import firebase from 'firebase';
  
 /*#212F3C -> navy-ish blue
   #2ECC71 -> green
-  #D5DBDB -> darker than white but whitish*/
+  #ECECEC -> darker than white but whitish*/
 
 export default class LoginScreen extends Component{
   constructor(){
@@ -36,7 +36,7 @@ export default class LoginScreen extends Component{
         console.log("inside .then of createUserWithEmailAndPassword.")
         db.collection("users").add({
           first_name: this.state.firstName,
-          last_name: this.state.last_name,
+          last_name: this.state.lastName,
           contact_no:this.state.contactNo,
           address:this.state.address,
           email_id:newEmail
@@ -64,6 +64,7 @@ export default class LoginScreen extends Component{
       if (password!==''){
         firebase.auth().signInWithEmailAndPassword(emailID, password)
         .then(()=>{
+          //this.props.navigation.navigate('HomeScreen');
           return Alert.alert('Successfully logged in!');
         })
         .catch((error)=>{
@@ -178,7 +179,7 @@ export default class LoginScreen extends Component{
               onPress = {()=>{
                 this.setState({isModalVisible:false});
               }}>
-                <Text style = {[styles.buttonText, {color:'#D5DBDB'}]}>Cancel</Text>
+                <Text style = {[styles.buttonText, {color:'#ECECEC'}]}>Cancel</Text>
               </TouchableOpacity>
             
               {/* Final Sign Up button */}
@@ -191,7 +192,7 @@ export default class LoginScreen extends Component{
                   this.state.confirmPassword
                 );
               }}>
-                <Text style = {[styles.buttonText, {color:'#D5DBDB'}]}>Sign Up</Text>
+                <Text style = {[styles.buttonText, {color:'#ECECEC'}]}>Sign Up</Text>
               </TouchableOpacity>
             </KeyboardAvoidingView>
           </ScrollView>
@@ -223,9 +224,9 @@ export default class LoginScreen extends Component{
           <TextInput
           style = {styles.mainScreenTextInput}
           placeholder = "example@abcd.com"
-          placeholderTextColor = '#D5DBDB'
+          placeholderTextColor = '#ECECEC'
           keyboardType = "email-address"
-          color = '#D5DBDB'
+          color = '#ECECEC'
           onChangeText = {text=>{
             this.setState({emailID:text});
           }}/>
@@ -235,8 +236,8 @@ export default class LoginScreen extends Component{
           style = {styles.mainScreenTextInput}
           secureTextEntry = {true}
           placeholder = "Enter Password"
-          placeholderTextColor = "#D5DBDB"
-          color = '#D5DBDB'
+          placeholderTextColor = "#ECECEC"
+          color = '#ECECEC'
           onChangeText = {text=>{
             this.setState({password:text});
           }}/>
@@ -289,17 +290,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderWidth: 1,
     borderRadius: 12,
-    borderColor: '#D5DBDB',    
+    borderColor: '#ECECEC',    
     margin: 15
   },
   buttonText:{
     fontSize: 15,
-    color:'#212F3C',
+    color: '#212F3C',
     textAlign: "center",
     fontWeight: "bold"
   },
   title:{
-    color: '#D5DBDB',
+    color: '#ECECEC',
     fontSize: 40,
     fontWeight: '400',
     paddingBottom: 30
@@ -310,7 +311,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignContent: "center",
     borderRadius: 10,
-    borderColor: '#D5DBDB',
+    borderColor: '#ECECEC',
     backgroundColor: '#2ECC71',
     marginRight: 30,
     marginLeft: 30,
@@ -326,6 +327,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     margin: 10,
     padding: 7.5,
-    backgroundColor: '#DBDBDB'
+    backgroundColor: '#ECECEC'
   }
 });
