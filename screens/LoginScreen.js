@@ -64,7 +64,7 @@ export default class LoginScreen extends Component{
       if (password!==''){
         firebase.auth().signInWithEmailAndPassword(emailID, password)
         .then(()=>{
-          //this.props.navigation.navigate('HomeScreen');
+          this.props.navigation.navigate('HomeScreen');
           return Alert.alert('Successfully logged in!');
         })
         .catch((error)=>{
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
   mainScreenTextInput:{
     width: 300,
     height: 40,
-    borderWidth: 1.25,
+    borderWidth: 2,
     borderRadius: 10,
     borderColor: '#2ECC71',
     paddingLeft: 10,
@@ -288,10 +288,10 @@ const styles = StyleSheet.create({
     height: 40,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 12,
     borderColor: '#ECECEC',    
-    margin: 15
+    margin: 12.5
   },
   buttonText:{
     fontSize: 15,
@@ -301,9 +301,9 @@ const styles = StyleSheet.create({
   },
   title:{
     color: '#ECECEC',
-    fontSize: 40,
+    fontSize: 47.5,
     fontWeight: '400',
-    paddingBottom: 30
+    paddingBottom: 25
   },
   modalView:{
     flex: 1,
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
     height: 35,
     alignSelf: "center",
     borderColor: '#212F3C',
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderRadius: 5,
     margin: 10,
     padding: 7.5,

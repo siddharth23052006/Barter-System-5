@@ -38,12 +38,13 @@ export default class HomeScreen extends Component{
   }
 
   /* Extracts a key from each item from the given data set */
-  keyExtractor = ({item, index})=>index.toString();
+  keyExtractor = (item, index)=>index.toString();
 
   /* Creates each item's format */
   renderItem = ({item, i})=>{
     return(
-      <ListItem key={i} bottomDivider>
+      <ListItem key={i} bottomDivider
+      containerStyle = {{backgroundColor:'#212F3C'}}>
         <ListItem.Content>
           <ListItem.Title style = {styles.listItemTitle}>{item.item_name}</ListItem.Title>
           <ListItem.Subtitle style = {{color: '#2ECC71'}}>{item.item_description}</ListItem.Subtitle>
@@ -57,7 +58,7 @@ export default class HomeScreen extends Component{
   }
   render(){
     return(
-      <View style = {{flex:1}}>
+      <View style = {{flex:1, backgroundColor:'#212F3C'}}>
 
         {/* Title of the screen */}
         <MyHeader title = "Home"/>
@@ -103,8 +104,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: '#2ECC71',
     borderRadius: 3,
-    borderWidth: 0.75,
-    borderColor: '#ECECEC'
+    borderWidth: 1,
+    borderColor: '#ECECEC',
+    margin: 5
   },
   subContainer:{
     flex: 1,

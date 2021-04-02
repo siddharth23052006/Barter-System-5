@@ -4,6 +4,16 @@ import HomeScreen from '../screens/HomeScreen';
 import ExchangeScreen from '../screens/ExchangeScreen';
 
 export const AppTabNavigator = createBottomTabNavigator({
-  HomeScreen:{screen:HomeScreen},
-  ExchangeScreen:{screen:ExchangeScreen}
+  HomeScreen:{
+    screen:HomeScreen,
+    navigationOptions:{
+      tabBarLabel: "Home"
+    }
+  },
+  ExchangeScreen:{
+    screen:ExchangeScreen,
+    navigationOptions:{
+      tabBarLabel: "Exchange Item"
+    }
+  }
 });

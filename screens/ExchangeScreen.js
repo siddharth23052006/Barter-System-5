@@ -18,8 +18,11 @@ export default class ExchangeScreen extends Component{
       itemDescription: ''
     }
   }
-
-  createUniqueID = ()=>{return Math.random.toString(36).substring(7)}
+  
+  // Creates a unique ID for each item request 
+  createUniqueID(){
+    return Math.random().toString(36).substring(7);
+  }
 
   /* This function adds the item and its description in database
   when it is called, which is when 'SUBMIT' is pressed */
@@ -31,11 +34,7 @@ export default class ExchangeScreen extends Component{
       item_description: itemDescription,
       request_id: randomRequestID
     });
-
-    this.setState({
-      itemName: '',
-      itemDescription: ''
-    });
+    this.setState({itemName: '', itemDescription: ''});
 
     return Alert.alert('Item exchange requested.', '',[
       {text: 'OK', onPress: ()=>{
@@ -59,6 +58,7 @@ export default class ExchangeScreen extends Component{
           onChangeText = {text=>{
             this.setState({itemName:text});
           }}
+          value = {this.state.itemName}
           />
 
           {/* Item Description Input */}
@@ -70,6 +70,7 @@ export default class ExchangeScreen extends Component{
           onChangeText = {text=>{
             this.setState({itemDescription:text});
           }}
+          value = {this.state.itemDescription}
           />
 
           {/* Submit Button */}
@@ -90,16 +91,12 @@ export default class ExchangeScreen extends Component{
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#212F3C',
-    justifyContent: "center",
-    alignItems: "center",
-    width: '100%',
-    height: '100%'
+    backgroundColor: '#212F3C'
   },
   textInput:{
     width: '80%',
     borderRadius: 5,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#2ECC71',
     alignSelf: 'center',
     backgroundColor: '#ECECEC',
@@ -111,10 +108,12 @@ const styles = StyleSheet.create({
     height: 40,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 12,
     borderColor: '#ECECEC',    
-    margin: 15
+    margin: 15,
+    alignSelf: "center",
+    backgroundColor: '#2ECC71'
   },
   buttonText:{
     fontSize: 15,
