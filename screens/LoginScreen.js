@@ -79,6 +79,10 @@ export default class LoginScreen extends Component{
     }
   }
 
+  componentDidMount(){
+    //console.log(this.props.navigation.navigate);
+  }
+
   /* Creates the Modal for Sign Up pop-up. */
   showModal = ()=>{
     return (

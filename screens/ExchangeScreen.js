@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, Alert, 
 import MyHeader from '../components/MyHeader';
 import db from '../Config';
 import firebase from 'firebase';
-import { CardStyleInterpolators } from 'react-navigation-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 /*#212F3C -> navy-ish blue
   #2ECC71 -> green
@@ -45,45 +45,47 @@ export default class ExchangeScreen extends Component{
 
   render(){
     return(
-      <View style = {styles.container}>
-        {/* Header */}
-        <MyHeader title = "Exchange Item"/>
-        <KeyboardAvoidingView enabled>
+      <SafeAreaProvider>
+        <View style = {styles.container}>
+          {/* Header */}
+          <MyHeader title = "Exchange Item"/>
+          <KeyboardAvoidingView enabled>
 
-          {/* Item Name Input */}
-          <TextInput
-          style = {[styles.textInput , {height: 40}]}
-          placeholder = "Enter Item Name"
-          color = "#212F3C"
-          onChangeText = {text=>{
-            this.setState({itemName:text});
-          }}
-          value = {this.state.itemName}
-          />
+            {/* Item Name Input */}
+            <TextInput
+            style = {[styles.textInput , {height: 40}]}
+            placeholder = "Enter Item Name"
+            color = "#212F3C"
+            onChangeText = {text=>{
+              this.setState({itemName:text});
+            }}
+            value = {this.state.itemName}
+            />
 
-          {/* Item Description Input */}
-          <TextInput
-          style = {[styles.textInput, {height: 240}]}
-          placeholder = "Enter Item Description"
-          color = "#212F3C"
-          multiline = {true}
-          onChangeText = {text=>{
-            this.setState({itemDescription:text});
-          }}
-          value = {this.state.itemDescription}
-          />
+            {/* Item Description Input */}
+            <TextInput
+            style = {[styles.textInput, {height: 240}]}
+            placeholder = "Enter Item Description"
+            color = "#212F3C"
+            multiline = {true}
+            onChangeText = {text=>{
+              this.setState({itemDescription:text});
+            }}
+            value = {this.state.itemDescription}
+            />
 
-          {/* Submit Button */}
-          <TouchableOpacity
-          style = {styles.button}
-          onPress = {()=>{
-            this.addItem(this.state.itemName, this.state.itemDescription);
-          }}>
-            <Text style = {styles.buttonText}>SUBMIT</Text>
-          </TouchableOpacity>
+            {/* Submit Button */}
+            <TouchableOpacity
+            style = {styles.button}
+            onPress = {()=>{
+              this.addItem(this.state.itemName, this.state.itemDescription);
+            }}>
+              <Text style = {styles.buttonText}>SUBMIT</Text>
+            </TouchableOpacity>
 
-        </KeyboardAvoidingView>
-      </View>
+          </KeyboardAvoidingView>
+        </View>
+      </SafeAreaProvider>
     );
   }
 }

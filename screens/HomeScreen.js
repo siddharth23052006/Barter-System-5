@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, FlatList } from
 import MyHeader from '../components/MyHeader';
 import { ListItem } from 'react-native-elements';
 import db from '../Config';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import firebase from 'firebase';
 
 /*#212F3C -> navy-ish blue
@@ -29,6 +30,7 @@ export default class HomeScreen extends Component{
   when the component is mounted */
   componentDidMount(){
     this.getAllRequests();
+    //console.log(...this.props);
   }
 
   /* Resets the request reference to null when the 
@@ -58,36 +60,37 @@ export default class HomeScreen extends Component{
   }
   render(){
     return(
-      <View style = {{flex:1, backgroundColor:'#212F3C'}}>
+      <SafeAreaProvider>
+        <View style = {{flex:1, backgroundColor:'#212F3C'}}>
+          {/* Title of the screen */}
+          <MyHeader title = "Home"/>
 
-        {/* Title of the screen */}
-        <MyHeader title = "Home"/>
+          {/* This View creates either "No Data Available" or a
+          FlatList with all barter requests and its information */}
+          <View style = {{flex:1}}>
 
-        {/* This View creates either "No Data Available" or a
-        FlatList with all barter requests and its information */}
-        <View style = {{flex:1}}>
-          
-          {this.state.allRequests.length === 0?(
+            {this.state.allRequests.length === 0?(
 
-            /* Condition applies when there are no requests */
-            <View style = {styles.subContainer}>
-              <Text style = {{fontSize:20}}>No Data Available</Text>
-            </View>
+              /* Condition applies when there are no requests */
+              <View style = {styles.subContainer}>
+                <Text style = {{fontSize:20}}>No Data Available</Text>
+              </View>
 
-          ):(
+            ):(
 
-            /* This creates a FlatList of all the requests */
-            <SafeAreaView>
-              <FlatList
-                data = {this.state.allRequests}
-                keyExtractor = {this.keyExtractor}
-                renderItem = {this.renderItem}
-              />
-            </SafeAreaView>
+              /* This creates a FlatList of all the requests */
+              <SafeAreaView>
+                <FlatList
+                  data = {this.state.allRequests}
+                  keyExtractor = {this.keyExtractor}
+                  renderItem = {this.renderItem}
+                />
+              </SafeAreaView>
 
-          )}
+            )}
+          </View>
         </View>
-      </View>
+      </SafeAreaProvider>
     );
   }
 }
