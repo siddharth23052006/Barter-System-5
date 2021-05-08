@@ -8,3 +8,4 @@ This app can help you barter items with other people. You can create an account,
 [Exchange Screen](https://drive.google.com/file/d/1wxisfJWn9VM5HLjvHvg2h6JGngd04K5_/view?usp=sharing)
 [Exchange Alert](https://drive.google.com/file/d/1Y46NY4e48xaSfWVbxlJzfxpzvtjEVjpp/view?usp=sharing)
 [Updated Home Screen](https://drive.google.com/file/d/1h29yxdpIT9DBYbGv1QCPXmreFW4gqbmL/view?usp=sharing)
+[Settings Screen](https://drive.google.com/file/d/1RlriAWdq1RLOI4LTTBtKlx_xgdDCDCsw/view?usp=sharing)
