@@ -22,7 +22,7 @@ export default class SideBarMenu extends Component{
           <TouchableOpacity
           style = {styles.logOutButton}
           onPress = {()=>{
-            //this.props.navigation.navigate('HomeScreen');
+            this.props.navigation.navigate('LoginScreen');
             firebase.auth().signOut();
           }}>
             <Text style = {{fontSize:20,fontWeight:'bold'}}>Log Out</Text>
