@@ -14,7 +14,7 @@ export default class SideBarMenu extends Component{
       /* The main View */
       <View style = {{flex:1}}>
 
-        {/*<DrawerItems {...this.props}/>*/}
+        <DrawerItems {...this.props}/>
 
         {/* The button view */}
         <View style = {{flex:0.2,justifyContent:'flex-end',paddingBottom:30}}>
@@ -22,10 +22,10 @@ export default class SideBarMenu extends Component{
           <TouchableOpacity
           style = {styles.logOutButton}
           onPress = {()=>{
-            this.props.navigation.navigate('HomeScreen');
+            //this.props.navigation.navigate('HomeScreen');
             firebase.auth().signOut();
           }}>
-            <Text style = {{fontSize:30,fontWeight:'bold'}}>Log Out</Text>
+            <Text style = {{fontSize:20,fontWeight:'bold'}}>Log Out</Text>
           </TouchableOpacity>
         </View>
       </View>

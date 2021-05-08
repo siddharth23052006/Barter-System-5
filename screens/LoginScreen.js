@@ -101,79 +101,79 @@ export default class LoginScreen extends Component{
 
               {/* First Name input */}
               <TextInput
-              style = {styles.modalTextInput}
-              placeholderTextColor = '#212F3C'
-              placeholder = "First Name"
-              maxLength = {15}
-              onChangeText = {text=>{
-                this.setState({firstName:text});
-              }}
+                style = {styles.modalTextInput}
+                placeholderTextColor = '#212F3C'
+                placeholder = "First Name"
+                maxLength = {15}
+                onChangeText = {text=>{
+                  this.setState({firstName:text});
+                }}
               />
     
               {/* Last Name input */}
               <TextInput
-              style = {styles.modalTextInput}
-              placeholderTextColor = '#212F3C'
-              placeholder = "Last Name"
-              maxLength = {20}
-              onChangeText = {text=>{
-                this.setState({lastName:text});
-              }}
+                style = {styles.modalTextInput}
+                placeholderTextColor = '#212F3C'
+                placeholder = "Last Name"
+                maxLength = {20}
+                onChangeText = {text=>{
+                  this.setState({lastName:text});
+                }}
               />
     
               {/* Contact/Phone number input */}
               <TextInput
-              style = {styles.modalTextInput}
-              placeholderTextColor = '#212F3C'
-              placeholder = "Contact Number"
-              maxLength = {10}
-              keyboardType = "number-pad"
-              onChangeText = {num=>{
-                this.setState({contactNo:num});
-              }}
+                style = {styles.modalTextInput}
+                placeholderTextColor = '#212F3C'
+                placeholder = "Contact Number"
+                maxLength = {10}
+                keyboardType = "number-pad"
+                onChangeText = {num=>{
+                  this.setState({contactNo:num});
+                }}
               />
     
               {/* Address input */}
-              <TextInput
-              style = {[styles.modalTextInput, {height:105}]}
-              placeholderTextColor = '#212F3C'
-              placeholder = "Enter Address"
-              multiline = {true}
-              onChangeText = {text=>{
-                this.setState({address:text});
-              }}
+                <TextInput
+                style = {[styles.modalTextInput, {height:105}]}
+                placeholderTextColor = '#212F3C'
+                placeholder = "Enter Address"
+                multiline = {true}
+                onChangeText = {text=>{
+                  this.setState({address:text});
+                }}
               />
     
               {/* Email ID input */}
               <TextInput
-              style = {styles.modalTextInput}
-              placeholderTextColor = '#212F3C'
-              keyboardType = "email-address"
-              placeholder = "Enter email ID"
-              onChangeText = {text=>{
-                this.setState({emailID:text});
-              }}
+                style = {styles.modalTextInput}
+                placeholderTextColor = '#212F3C'
+                keyboardType = "email-address"
+                placeholder = "Enter email ID"
+                onChangeText = {text=>{
+                  this.setState({emailID:text});
+                }}
               />
     
               {/* Password input */}
               <TextInput
-              style = {styles.modalTextInput}
-              placeholderTextColor = '#212F3C'
-              placeholder = "Enter Password"
-              secureTextEntry = {true}
-              onChangeText = {text=>{
-                this.setState({password:text});
-              }}
+                style = {styles.modalTextInput}
+                placeholderTextColor = '#212F3C'
+                placeholder = "Enter Password"
+                secureTextEntry = {true}
+                onChangeText = {text=>{
+                  this.setState({password:text});
+                }}
               />
     
               {/* Confirm Password input */}
               <TextInput
-              style = {styles.modalTextInput}
-              placeholderTextColor = '#212F3C'
-              placeholder = "Confirm password"
-              secureTextEntry = {true}
-              onChangeText = {text=>{
-                this.setState({confirmPassword:text});
+                style = {styles.modalTextInput}
+                placeholderTextColor = '#212F3C'
+                placeholder = "Confirm password"
+                secureTextEntry = {true}
+                onChangeText = {text=>{
+                  this.setState({confirmPassword:text});
               }}
               />
     
@@ -226,25 +226,27 @@ export default class LoginScreen extends Component{
           
           {/* Email Text Input */}
           <TextInput
-          style = {styles.mainScreenTextInput}
-          placeholder = "example@abcd.com"
-          placeholderTextColor = '#ECECEC'
-          keyboardType = "email-address"
-          color = '#ECECEC'
-          onChangeText = {text=>{
-            this.setState({emailID:text});
-          }}/>
+            style = {styles.mainScreenTextInput}
+            placeholder = "example@abcd.com"
+            placeholderTextColor = '#ECECEC'
+            keyboardType = "email-address"
+            color = '#ECECEC'
+            onChangeText = {text=>{
+              this.setState({emailID:text});
+            }}
+          />
 
           {/* Password Text Input */}
           <TextInput
-          style = {styles.mainScreenTextInput}
-          secureTextEntry = {true}
-          placeholder = "Enter Password"
-          placeholderTextColor = "#ECECEC"
-          color = '#ECECEC'
-          onChangeText = {text=>{
-            this.setState({password:text});
-          }}/>
+            style = {styles.mainScreenTextInput}
+            secureTextEntry = {true}
+            placeholder = "Enter Password"
+            placeholderTextColor = "#ECECEC"
+            color = '#ECECEC'
+            onChangeText = {text=>{
+              this.setState({password:text});
+            }}
+          />
 
           {/* Login Button */}
           <TouchableOpacity
